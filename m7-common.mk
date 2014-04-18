@@ -24,8 +24,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-PRODUCT_COPY_FILES += \
-    device/htc/m7-common/rootdir/apps/com.teslacoilsw.launcher-1.apk:data/app/com.teslacoilsw.launcher-1.apk
+PRODUCT_PACKAGES += \
+    Launcher3
 
 # Ramdisk
 PRODUCT_PACKAGES += \
