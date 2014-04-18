@@ -27,21 +27,6 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_COPY_FILES += \
     device/htc/m7-common/rootdir/apps/com.teslacoilsw.launcher-1.apk:data/app/com.teslacoilsw.launcher-1.apk
 
-PRODUCT_PACKAGES += \
-    com.bigeyes0x0.trickstermod-1 \
-    com.shazam.android-1 \
-    com.riteshsahu.SMSBackupRestore-1 \
-    com.riteshsahu.CallLogBackupRestore-1 \
-    com.pof.android-1 \
-    com.outlook.Z7-1 \
-    com.myyearbook.m-1 \
-    com.mxtech.videoplayer.ad-1 \
-    com.maxmpz.audioplayer-1 \
-    com.higherone.mobile.android-1 \
-    com.facebook.orca-1 \
-    com.facebook.katana-1 \
-    com.estrongs.android.pop-1 
-
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
