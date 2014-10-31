@@ -17,6 +17,4 @@
  */
 -->
 <resources>
-    <!-- Default for Settings.System.UI_FORCE_OVERFLOW_BUTTON. -->
-    <integer name="def_force_overflow_button">1</integer>
-</resources>
+
