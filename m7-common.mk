@@ -24,8 +24,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-PRODUCT_COPY_FILES += \
-    device/htc/m7-common/rootdir/apps/com.teslacoilsw.launcher-1.apk:data/app/com.teslacoilsw.launcher-1.apk
+PRODUCT_PACKAGES += \
+    Launcher3
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -40,21 +40,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/init.post_boot.sh:system/etc/init.post_boot.sh
 
 # Recovery
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 PRODUCT_PACKAGES += \
     lpm.rc \
-    charger \
     choice_fn \
     offmode_charging \
+    offmode_charging_res_images \
+    offmode_charging_warn_res_images \
+    chargeled \
     init.recovery.qcom.rc
-
-PRODUCT_PACKAGES += \
-    battery_0.png \
-    battery_1.png \
-    battery_2.png \
-    battery_3.png \
-    battery_4.png \
-    battery_fail.png \
-    battery_full.png
 
 # QC thermald config
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/thermald.conf:system/etc/thermald.conf
@@ -86,8 +80,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/dsp/soundimage/srs_global.cfg:system/etc/soundimage/srs_global.cfg
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/AudioBTID.csv:system/etc/AudioBTID.csv \
-    $(LOCAL_PATH)/configs/AudioBTIDnew.csv:system/etc/AudioBTIDnew.csvs \
     $(LOCAL_PATH)/dsp/snd_soc_msm/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3
 
 # Media
@@ -122,6 +114,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
 
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8960
+
 # NFC
 PRODUCT_PACKAGES += \
     nfc.msm8960 \
@@ -134,15 +130,8 @@ PRODUCT_PACKAGES += \
 
 # Misc Packages
 PRODUCT_PACKAGES += \
-    DeviceSettings 
-    
- Misc Packages
-PRODUCT_PACKAGES += \
+    DeviceSettings \
     Torch
-
-# Variant linking script
-PRODUCT_PACKAGES += \
-    makelinks.sh
 
 # Prepatch to fix BT/WiFi bus lockups
 PRODUCT_COPY_FILES += \
@@ -156,7 +145,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -221,4 +209,4 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalv
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # Include non-opensource parts
-$(call inherit-product, vendor/htc/m7-common/m7-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/m7-common/m7-common-vendor.mk)
