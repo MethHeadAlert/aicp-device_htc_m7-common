@@ -130,8 +130,14 @@ PRODUCT_PACKAGES += \
 
 # Misc Packages
 PRODUCT_PACKAGES += \
-    DeviceSettings \
-    Torch
+    DeviceSettings 
+# Misc Packages
+PRODUCT_PACKAGES += \
+     Torch
+ 		 
+# Variant linking script
+PRODUCT_PACKAGES += \
+    makelinks.sh
 
 # Prepatch to fix BT/WiFi bus lockups
 PRODUCT_COPY_FILES += \
