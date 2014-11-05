@@ -29,6 +29,11 @@
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/m7-common/include
 
+# Vendor Init
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_m7lte
+TARGET_LIBINIT_DEFINES_FILE := device/htc/m7lte/init/init_m7lte.c
+
 # Krait optimizations from Bionic
 TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 TARGET_USE_KRAIT_PLD_SET := true
@@ -44,6 +49,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 TARGET_KERNEL_CONFIG := m7_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8960
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7-sm
 
 # Audio
 BOARD_USES_FLUENCE_INCALL := true  # use DMIC in call only
