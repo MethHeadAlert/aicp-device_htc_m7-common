@@ -1354,14 +1354,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:100
-		'RX4 Digital Volume':1:100
-		'RX5 Digital Volume':1:100
-		'RX6 Digital Volume':1:100
-		'LINEOUT1 Volume':1:100
-		'LINEOUT2 Volume':1:100
-		'LINEOUT3 Volume':1:100
-		'LINEOUT4 Volume':1:100
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'RCV AMP EN Switch':1:1
 	EndSequence
 
@@ -1827,14 +1827,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:100
-		'RX4 Digital Volume':1:100
-		'RX5 Digital Volume':1:100
-		'RX6 Digital Volume':1:100
-		'LINEOUT1 Volume':1:100
-		'LINEOUT2 Volume':1:100
-		'LINEOUT3 Volume':1:100
-		'LINEOUT4 Volume':1:100
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:0
+		'LINEOUT2 Volume':1:0
+		'LINEOUT3 Volume':1:0
+		'LINEOUT4 Volume':1:0
 		'HS AMP EN Switch':1:1
 	EndSequence
 
